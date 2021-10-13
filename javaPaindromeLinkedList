@@ -1,0 +1,22 @@
+//this function returns true if linked list is palindrome else false
+public boolean isPalindrome(ListNode head) {
+        
+        Stack<ListNode> st = new Stack<ListNode>();
+        ListNode curr=head;
+        while(curr!=null)
+        {
+            st.push(curr);
+                curr=curr.next;
+        }
+        
+        while(head!=null)
+        {
+            if((st.pop().val) != (head.val))
+                return false;
+            
+            head=head.next;
+        }
+        
+        return true;
+        
+    }
